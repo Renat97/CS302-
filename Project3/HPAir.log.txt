@@ -1,0 +1,3 @@
+Stack's current location: houston: pivot
+Stack's current location: los angeles: pivot
+Stack popped
