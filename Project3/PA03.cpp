@@ -63,6 +63,8 @@ int main() {
         /// display the request
         cout << "\n Request is to fly from " << request.first << " to " << request.second << "\n";
         /// if first city is not in city list
+        cout << request.first << endl;
+        cout << request.second << endl;
         if (!map.checkCity(request.first)) {
             /// display the result
             cout << " Sorry. HPAir does not serve " << request.first << "\n";

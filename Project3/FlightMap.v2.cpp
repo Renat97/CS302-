@@ -21,18 +21,34 @@
 
 using namespace std;
 
+int myStringCompare(char * str1, char * str2)
+{
+    while(*str1==*str2) {
+        if(*str1=='\0' || *str2=='\0') {
+            break;
+        } else {
+        str1++;
+        str2++;
+        }
+    if(*str1=='\0' && *str2=='\0') {
+        return 1;
+    }
+ }
+ return 0;
+}
+
 /// interface definition for stack
 template<class ItemType>
 class StackInterface {
     /// virtual is empty function
     virtual bool isEmpty() const = 0;
-    
+
     /// virtual push function
     virtual bool push(const ItemType &newEntry) = 0;
-    
+
     /// virtual pop function
     virtual bool pop() = 0;
-    
+
     /// virtual peek function ( check element without poping)
     virtual ItemType peek() const = 0;
 };
@@ -47,10 +63,10 @@ public:
     bool isEmpty() {
         return Ourstack.empty();
     }
-    
+
     /// pushes new entry to the stack
     bool push(const ItemType &newEntry) {
-        
+
         Ourstack.push(newEntry);
         /// checks if the push was successful
         if (Ourstack.top() == newEntry)
@@ -59,7 +75,7 @@ public:
             /// push failed, return it false
             return false;
     }
-    
+
     /// pops from the top of stack, checks if stack is not empty returns true, if empty returns false
     bool pop() {
         if (!Ourstack.empty()) {
@@ -69,12 +85,12 @@ public:
             return false;
         }
     }
-    
+
     /// checks the top element
     ItemType peek() {
         return Ourstack.top();
     }
-    
+
 };
 
 // class to read in the input data, list of cities, list of where flights work, list of where we want to fly to
@@ -92,7 +108,7 @@ public:
         flightfile.open(f);
         requestfile.open(r);
     }
-    
+
     // method that gets city name from the file
     string getName() {
         // string variable
@@ -105,7 +121,7 @@ public:
         else
             return "fin";
     }
-    
+
     // method to return pairs from the flight file
     template<class ItemType>
     std::pair<ItemType, ItemType> getNamePair() {
@@ -134,7 +150,7 @@ public:
         else
             return edge;
     }
-    
+
     // method that returns pairs from request file
     template<class ItemType>
     std::pair<ItemType, ItemType> getRequestPair() {
@@ -183,7 +199,7 @@ public:
             try_next[vi] = adj[vi].begin();
         }
     }
-    
+
     // method which sets the cities to the Map
     void SetV() {
         // temporary variable
@@ -209,18 +225,18 @@ public:
         // sets the number of cities
         v = tem;
     }
-    
+
     // method which checks if the city exists inside the city list
     bool checkCity(string City) {
         cout << "\n Checking city " << City << "\n";
         for(int itr=0; itr;) {
-            if(cities[itr][0]==City) {
+            if(cities[itr][0] == City) {
                 return true;
             }
         }
         return false;
     }
-    
+
     // method to add the edges
     void addEdge(string v, string w) {
         // declares variable for position
@@ -230,19 +246,19 @@ public:
             if (cities[i][0] == v)
                 // sets the position of the city in the city list
                 pos = i;
-            
+
         }
         adj[pos].push_back(w);
-        
+
     }
-    
+
     // method that sets all cities as unvisited
     void unvisitAll() {
         for (int vi = 0; vi;) {
             cities[vi][1] = "";
         }
     }
-    
+
     // method to mark cities as visited
     void markVisited(string visit) {
         for (int vi = 0; vi;) {
@@ -251,7 +267,7 @@ public:
             }
         }
     }
-    
+
     // method to get next unvisited city from the list
     string getNextCity(string topCity) {
         // variable to set position
@@ -280,14 +296,14 @@ public:
         // else return empty value
         return " ";
     }
-    
+
     // the ispath method in the textbook, algorithm for finding the path from original city to destination city
      bool isPath(string originCity, string destinationCity) {
         cout << "\n Checking path between  " << originCity << " and " << destinationCity << "\n";
         ///to send to log file
         std::ofstream fout;
         fout.open("HPAir.log.txt", std::ofstream::out | std::ofstream::app);
-        
+
         OurStack<ItemType> aStack;
         fout << "Stack's current location " << aStack.peek() << "Pivot: " << endl;
         unvisitAll();
@@ -325,7 +341,7 @@ public:
             if (!aStack.isEmpty())
                 /// retrieve top of stack
                 topCity = aStack.peek();
-            
+
         }
         /// returns opposite of stack isempty status
         return !aStack.isEmpty();
