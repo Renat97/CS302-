@@ -1,0 +1,1 @@
+The program should compile through the makefile by typing "make" in the terminal. There should be no errors or incomplete parts and it should be running fine. When the program is compiled through the make file, ./a.out is the executable to run to run the files. This Project implements the infamous Dijkstra's algorithm.

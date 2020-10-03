@@ -8,6 +8,7 @@ NodeQueue::NodeQueue()
 {
     root = NULL;
     SIZE = 0;
+    int a = 5;
 }
 
 NodeQueue::~NodeQueue()

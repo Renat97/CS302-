@@ -1,0 +1,1 @@
+first class program made to understand basic FILE I/O and remembering how to deal with strings in C++. Compiled with G++ and ran with ./a.out

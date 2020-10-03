@@ -1,0 +1,37 @@
+
+Proj5: proj5.o Node.o Event.o LinkedQueue.o SortedList.o PriorityQueue.o 
+	g++ -std=c++11 proj5.o Node.h Event.h LinkedQueue.h SortedList.h PriorityQueue.h
+
+proj5.o: proj5.cpp
+ 
+	g++ -std=c++11 -c proj5.cpp
+
+Node.o: Node.h
+ 
+	g++ -std=c++11 -c Node.h
+
+Event.o: Event.h
+
+	g++ -std=c++11 -c Event.h
+
+LinkedQueue.o: LinkedQueue.h
+
+	g++ -std=c++11 -c LinkedQueue.h
+
+SortedList.o: SortedList.h
+
+	g++ -std=c++11 -c SortedList.h
+
+PriorityQueue.o: PriorityQueue.h
+
+	g++ -std=c++11 -c PriorityQueue.h
+
+
+clean:
+
+	rm -rf *.o Proj5
+
+
+
+
+

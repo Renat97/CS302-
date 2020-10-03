@@ -1,1 +1,40 @@
-sorted
+************ Bubble Sort 1000 ***********
+Unsorted array
+Number of comparisons: 499094
+Number of swaps: 239966
+Took :4.114 milliseconds
+Sorted array
+Number of comparisons: 999
+Number of swaps: 0
+Took :0.012 milliseconds
+************ Merge Sort 1000 ***********
+Unsorted array
+Took :0.148 milliseconds
+Sorted array
+Took :0.086 milliseconds
+************ Radix Sort 1000 ***********
+Unsorted array
+Took :0.093 milliseconds
+Sorted array
+Took :0.088 milliseconds
+************ Bubble Sort 10000 ***********
+Unsorted array
+Number of comparisons: 49989644
+Number of swaps: 24993610
+Took :434.884 milliseconds
+Sorted array
+Number of comparisons: 9999
+Number of swaps: 0
+Took :0.044 milliseconds
+************ Merge Sort 10000 ***********
+Unsorted array
+Took :2.026 milliseconds
+Sorted array
+Took :1.117 milliseconds
+************ Radix Sort 10000 ***********
+Unsorted array
+Took :1.041 milliseconds
+Sorted array
+Took :1.167 milliseconds
+************ Bubble Sort 100000 ***********
+Unsorted array
